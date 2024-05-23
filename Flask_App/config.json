@@ -1,0 +1,6 @@
+{
+  "url-backend": "127.0.0.1",
+  "port": 9999,
+  "data-db-connection": "mongodb+srv://willcoding96:FoRVcTXCgS7X9aRB@appideas.s0qnumh.mongodb.net/UsersInfo?retryWrites=true&w=majority",
+  "name-db": "UsersInfo"
+}
