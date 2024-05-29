@@ -1,0 +1,1074 @@
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 31, in create_token
+    headers = {"Content-Type": "application/json", "Authorization": "Bearer " + jwt_token}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 31, in create_token
+    headers = {"Content-Type": "application/json"}
+KeyError: 'token'
+ERROR:main:Exception on /eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxNjY4Njk1MiwianRpIjoiNzQ1ZjA1YWItYzUzZS00YjQzLTg0NDktMThlMGUwZDY0ZmExIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6eyJfaWQiOiI2NGIwMzdkMmY1ODkwNjMxYTU5MWZlMWQiLCJ1c2VybmFtZSI6IldpbGxXaXRjaGVyeSIsImVfbWFpbCI6IndpbG1lcmg3NUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiIsInJvbCI6eyJfaWQiOiI2NGIwNGUwMWQ1ZWE3OTdlN2Y2NmQ5YTYiLCJuYW1lIjoiQWRtaW4iLCJkZXNjcmlwdGlvbiI6IkV2ZXJ5dGhpbmcifX0sIm5iZiI6MTcxNjY4Njk1MiwiY3NyZiI6ImU0NzZjM2JjLTE1ZWQtNGFlNy1hNjRlLTMzOWJjNTUxYmY4NCIsImV4cCI6MTcxNjc3MzM1Mn0.sKt0kxZfi3yXVS8sPHmEbinPOk_HgtDepV4cThEIGOw [GET]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 400, in request
+    self.endheaders()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1040, in _send_output
+    self.send(msg)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 980, in send
+    self.connect()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 238, in connect
+    self.sock = self._new_conn()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000216503CB040>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 589, in send
+    resp = conn.urlopen(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /validate_permit/rol/64b04e01d5ea797e7f66d9a6 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000216503CB040>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 878, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1253, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 53, in before_request_callback
+    hasPermission = validatePermission(endPoint, request.method, user["rol"]["_id"])
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 76, in validatePermission
+    response = requests.get(url, json=body, headers=headers)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 622, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /validate_permit/rol/64b04e01d5ea797e7f66d9a6 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000216503CB040>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_c
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+UnboundLocalError: local variable 'dataConfig' referenced before assignment
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+UnboundLocalError: local variable 'dataConfig' referenced before assignment
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+UnboundLocalError: local variable 'dataConfig' referenced before assignment
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+UnboundLocalError: local variable 'dataConfig' referenced before assignment
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+UnboundLocalError: local variable 'dataConfig' referenced before assignment
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 30, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+UnboundLocalError: local variable 'dataConfig' referenced before assignment
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 34, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+UnboundLocalError: local variable 'dataConfig' referenced before assignment
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 34, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+UnboundLocalError: local variable 'dataConfig' referenced before assignment
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 34, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+UnboundLocalError: local variable 'dataConfig' referenced before assignment
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 34, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+UnboundLocalError: local variable 'dataConfig' referenced before assignment
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 34, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+UnboundLocalError: local variable 'dataConfig' referenced before assignment
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 35, in create_token
+    headers = {"Content-Type": "application/json; charset=utf-8", "Authorization": "Bearer " + dataConfig["token"]}
+KeyError: 'token'
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 400, in request
+    self.endheaders()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1040, in _send_output
+    self.send(msg)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 980, in send
+    self.connect()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 238, in connect
+    self.sock = self._new_conn()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000207218588E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 589, in send
+    resp = conn.urlopen(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000207218588E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 43, in create_token
+    response = requests.post(url, json=data, headers=headers)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 622, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000207218588E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))

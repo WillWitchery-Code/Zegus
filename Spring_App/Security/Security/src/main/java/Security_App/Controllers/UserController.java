@@ -53,7 +53,6 @@ public class UserController {
             .orElse(null);
         if (ActualUser!=null){
             ActualUser.setUsername(UsersInfo.getUsername());
-            ActualUser.setE_mail(UsersInfo.getE_mail());
             ActualUser.setPassword(convertirSHA256(UsersInfo.getPassword()));
             return this.Repository_User.save(ActualUser);
         }else{
@@ -89,7 +88,7 @@ public class UserController {
     
     @PostMapping("/validate")
     public User validate(@RequestBody User infoUser, final HttpServletResponse response) throws IOException {
-        User actualUser=this.Repository_User.getUserByEmail(infoUser.getE_mail());
+        User actualUser=this.Repository_User.getUserByUserName(infoUser.getUsername());
         if (actualUser!=null && actualUser.getPassword().equals(convertirSHA256(infoUser.getPassword()))) {
             actualUser.setPassword("");
             return actualUser;

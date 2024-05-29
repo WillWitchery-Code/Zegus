@@ -1,32 +1,13 @@
 # Change Log
-## [1.4.0] 2022-12-22
-### Updates
-- update to Angular 14
-- update all dependencies to match Angular 14 version
 
-## [1.3.0] 2020-12-16
-### Updates
-- update to Angular 11
-- update all dependencies to match Angular 11 version
+## [1.1.1] 2020-07-01
+- Update packages
 
-## [1.2.0] 2020-03-16
-### Updates
-- update to Angular 9
-- update all dependencies to match Angular 9 version
+## [1.1.0] 2019-02-12
+- Update all packages and lint files
+- Fix UI issues related to form group input
+- Add missing polyfills for IE
+- Add examples dropdown with links to landing, profile and login pages
 
-## [1.1.0] 2019-03-14
-### Changes
-- update to Angular 7
-- update to ng-bootstrap 4
-- update all dependences
-- fixed datepicker design
-- changed sign up page from index with login page
-- changed icons
-- fixed badges design
-
-## [1.0.1] 2018-05-21
-### Changes
-- changed GitHub repository
-
-## [1.0.0] 2018-03-08
-### Initial Release
+## [1.0.0] 2018-08-24
+### Stable Original Release
