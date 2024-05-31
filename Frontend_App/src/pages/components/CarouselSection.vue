@@ -1,8 +1,17 @@
 <template>
-  <div class="section" id="carousel">
+     
+  <div class="section" id="carousel"
+  style="background-image: url('img/bg11.jpg'); 
+  background-size: cover; 
+  background-position: top center; 
+  min-height: 700px;">
+    
     <div class="container">
+     
+  
+      
       <div class="title">
-        <h4>Carousel</h4>
+        <h4>Full of Real Experiences</h4>
       </div>
       <div class="row justify-content-center">
         <div class="col-8">
@@ -33,6 +42,7 @@
 </template>
 <script>
 import { Carousel, CarouselItem } from 'element-ui';
+import { Parallax } from '@/components';
 
 export default {
   components: {

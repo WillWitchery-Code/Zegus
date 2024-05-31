@@ -169,7 +169,7 @@
 }
 
 .input-group-text {
-    background-color: $white-bg;
+    background-color: $light-gray;
     border: 1px solid $light-gray;
     border-radius: $btn-round-radius;
     color: $dark-background;
@@ -177,7 +177,7 @@
     @include transition-input-focus-color();
 
     .input-group-focus &{
-      background-color: $white-bg;
+      background-color: $medium-gray;
       border-color: $primary-color;
     }
 

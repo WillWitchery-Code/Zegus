@@ -23,8 +23,7 @@ public class UserController {
     @Autowired
     private UserRepository Repository_User;
 
-    @Autowired
-    private RolRepository Repository_Rol;
+
     
     @GetMapping("")
     public List<User> index(){
@@ -80,8 +79,8 @@ public class UserController {
     @PutMapping("{id}/rol/{id_rol}")
     public User asignRol_Usuario(@PathVariable String id,@PathVariable String id_rol){
         User actualUser=this.Repository_User.findById(id).orElseThrow(RuntimeException::new);
-        Rol rolActual=this.Repository_Rol.findById(id_rol).orElseThrow(RuntimeException::new);
-        actualUser.setRol(rolActual);
+        // Rol rolActual=this.Repository_Rol.findById(id_rol).orElseThrow(RuntimeException::new);
+        //actualUser.setRol(rolActual);
         return this.Repository_User.save(actualUser);
         }
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="page-header clear-filter" filter-color="orange">
+    <div class="page-header clear-filter" filter-color="blue">
       <parallax
         class="page-header-image"
         style="background-image:url('img/header.jpg')"
@@ -8,32 +8,40 @@
       </parallax>
       <div class="container">
         <div class="content-center brand">
-          <img class="n-logo" src="img/now-logo.png" alt="" />
-          <h1 class="h1-seo">Zegus..</h1>
-          <h3>A beautiful Bootstrap 4 UI kit. Yours free.</h3>
+          <img class="n-logo" src="img/zegus_1.png"/>
+          <h1 class="h1-seo" 
+          style="color:black; 
+          font-weight:bold">
+          ZEGÜS</h1>
+          <h4 
+          style="color: black;"     
+          >Social Comunity Network</h4>  
+          <div class="col text-center">
+        <router-link
+          to="/login"
+          class="btn btn-info btn-round btn-lg btn-border 
+          border: 10px solid black;"
+          
+        >
+          JOIN
+        </router-link>
+        
+      </div>
         </div>
-        <h6 class="category category-absolute">
-          Designed by
+        
+        <h6 class="category category-absolute"
+        style="text-align: left;">
+          
+          Based on
           <a href="http://invisionapp.com/" target="_blank">
-            <img src="img/invision-white-slim.png" class="invision-logo" /> </a
-          >. Coded by
-          <a href="https://www.creative-tim.com" target="_blank">
-            <img
-              src="img/creative-tim-white-slim2.png"
-              class="creative-tim-logo"
-            /> </a
-          >.
+            <img src="img/invision-white-slim.png" class="invision-logo" /> </a>        >.
         </h6>
       </div>
+      
     </div>
    
-    
-   
-   
-    <carousel-section></carousel-section>
-   
-    
-    <signup-form></signup-form>
+
+  
     
   </div>
 
@@ -47,9 +55,7 @@ import ProgressPagination from './components/ProgressPagination';
 import Notifications from './components/Notifications';
 import Typography from './components/Typography';
 import JavascriptComponents from './components/JavascriptComponents';
-import CarouselSection from './components/CarouselSection';
 import NucleoIconsSection from './components/NucleoIconsSection';
-import SignupForm from './components/SignupForm';
 import ExamplesSection from './components/ExamplesSection';
 import DownloadSection from './components/DownloadSection';
 
@@ -57,8 +63,8 @@ export default {
   name: 'index',
   bodyClass: 'index-page',
   components: {   
-    CarouselSection,
-    SignupForm,
+   
+    
   }
 };
 </script>

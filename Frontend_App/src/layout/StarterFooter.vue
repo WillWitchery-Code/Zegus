@@ -7,41 +7,28 @@
     <div class="container">
       <nav>
         <ul>
-          <li>
-            <a href="https://www.creative-tim.com">
-              Creative Tim
-            </a>
-          </li>
-          <li>
-            <a href="https:///presentation.creative-tim.com">
-              About Us
-            </a>
-          </li>
-          <li>
-            <a href="https:///blog.creative-tim.com">
-              Blog
-            </a>
-          </li>
-          <li>
-            <a href="https://www.creative-tim.com/license">
-              License
-            </a>
-          </li>
+          <img 
+      class="n-logo" 
+      src="img/flags/CO.png"
+      width="30" />
+      <a>&nbsp&nbsp&nbsp&nbsp</a>
+      <img 
+      class="n-logo" 
+      src="img/icon/github_ico.png" 
+      width="30"/>
         </ul>
       </nav>
       <div class="copyright">
-        &copy; {{ year }}, Designed by
+        &copy; {{ year }}, Based on
         <a href="https:///www.invisionapp.com" target="_blank" rel="noopener"
           >Invision</a
         >. Coded by
         <a href="https://binarcode.com" target="_blank" rel="noopener"
-          >BinarCode</a
-        >
-        and
-        <a href="https://www.creative-tim.com" target="_blank" rel="noopener"
-          >Creative Tim</a
-        >.
+          >Will</a>
+     
+        
       </div>
+     
     </div>
   </footer>
 </template>

@@ -15,6 +15,19 @@
     padding: 0;
   }
 
+  .card-login{
+    
+    max-width: 50px;
+    margin: 0 auto;
+  
+    border-bottom: 0;
+    border-radius: 0;
+    padding: 0;
+   
+    
+    background-color: $primary-color;
+  }
+
   .card-footer{
     padding: 0;
     margin-top: 15px;
@@ -22,7 +35,7 @@
     border:0;
   }
 
-  &[data-background-color="orange"]{
+  &[data-background-color="blue"]{
       background-color: $primary-color;
   }
 
@@ -34,7 +47,7 @@
       background-color: $warning-color;
   }
 
-  &[data-background-color="blue"]{
+  &[data-background-color="black"]{
       background-color: $info-color;
   }
 

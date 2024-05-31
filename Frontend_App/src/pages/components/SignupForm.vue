@@ -5,7 +5,7 @@
   >
     <div class="container">
       <div class="row">
-        <card class="card-signup" header-classes="text-center" color="orange">
+        <card class="card-signup" header-classes="text-center" color="blue">
           <template slot="header">
             <h3 class="card-title title-up">Sign Up</h3>
             <div class="social-line">
@@ -56,14 +56,7 @@
           </div>
         </card>
       </div>
-      <div class="col text-center">
-        <router-link
-          to="/login"
-          class="btn btn-simple btn-round btn-white btn-lg"
-        >
-          View Login Page
-        </router-link>
-      </div>
+      
     </div>
   </div>
 </template>

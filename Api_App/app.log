@@ -1072,3 +1072,815 @@ Traceback (most recent call last):
   File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 622, in send
     raise ConnectionError(e, request=request)
 requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000207218588E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1377, in getresponse
+    response.begin()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 320, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 289, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 589, in send
+    resp = conn.urlopen(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1377, in getresponse
+    response.begin()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 320, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 289, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 41, in create_token
+    response = requests.post(url, json=data, headers=headers)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 604, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1377, in getresponse
+    response.begin()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 320, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 289, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 589, in send
+    resp = conn.urlopen(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1377, in getresponse
+    response.begin()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 320, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 289, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 41, in create_token
+    response = requests.post(url, json=data, headers=headers)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 604, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1377, in getresponse
+    response.begin()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 320, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 289, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 589, in send
+    resp = conn.urlopen(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1377, in getresponse
+    response.begin()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 320, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 289, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 41, in create_token
+    response = requests.post(url, json=data, headers=headers)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 604, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1377, in getresponse
+    response.begin()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 320, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 289, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 589, in send
+    resp = conn.urlopen(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1377, in getresponse
+    response.begin()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 320, in begin
+    version, status, reason = self._read_status()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 289, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 41, in create_token
+    response = requests.post(url, json=data, headers=headers)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 604, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 400, in request
+    self.endheaders()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1040, in _send_output
+    self.send(msg)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 980, in send
+    self.connect()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 238, in connect
+    self.sock = self._new_conn()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001928D7D96D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 589, in send
+    resp = conn.urlopen(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001928D7D96D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 41, in create_token
+    response = requests.post(url, json=data, headers=headers)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 622, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001928D7D96D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 400, in request
+    self.endheaders()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1040, in _send_output
+    self.send(msg)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 980, in send
+    self.connect()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 238, in connect
+    self.sock = self._new_conn()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001928D7DF8E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 589, in send
+    resp = conn.urlopen(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001928D7DF8E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 41, in create_token
+    response = requests.post(url, json=data, headers=headers)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 622, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001928D7DF8E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 400, in request
+    self.endheaders()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1040, in _send_output
+    self.send(msg)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 980, in send
+    self.connect()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 238, in connect
+    self.sock = self._new_conn()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001928D7D9AC0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 589, in send
+    resp = conn.urlopen(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001928D7D9AC0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 41, in create_token
+    response = requests.post(url, json=data, headers=headers)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 622, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001928D7D9AC0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 400, in request
+    self.endheaders()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1040, in _send_output
+    self.send(msg)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 980, in send
+    self.connect()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 238, in connect
+    self.sock = self._new_conn()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001928D7DF040>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 589, in send
+    resp = conn.urlopen(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001928D7DF040>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 41, in create_token
+    response = requests.post(url, json=data, headers=headers)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 622, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001928D7DF040>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 400, in request
+    self.endheaders()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1040, in _send_output
+    self.send(msg)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 980, in send
+    self.connect()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 238, in connect
+    self.sock = self._new_conn()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001E7588B3E50>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 589, in send
+    resp = conn.urlopen(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E7588B3E50>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 40, in create_token
+    response = requests.post(url, json=data, headers=headers)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 622, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E7588B3E50>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 400, in request
+    self.endheaders()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1040, in _send_output
+    self.send(msg)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 980, in send
+    self.connect()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 238, in connect
+    self.sock = self._new_conn()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000025BBE8EAFD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 589, in send
+    resp = conn.urlopen(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000025BBE8EAFD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 45, in create_token
+    response = requests.post(url, json=data, headers=headers)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 622, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000025BBE8EAFD0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 400, in request
+    self.endheaders()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1040, in _send_output
+    self.send(msg)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 980, in send
+    self.connect()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 238, in connect
+    self.sock = self._new_conn()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000021CBA53E310>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 589, in send
+    resp = conn.urlopen(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021CBA53E310>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 45, in create_token
+    response = requests.post(url, json=data, headers=headers)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 622, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021CBA53E310>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+ERROR:main:Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 400, in request
+    self.endheaders()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 1040, in _send_output
+    self.send(msg)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\http\client.py", line 980, in send
+    self.connect()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 238, in connect
+    self.sock = self._new_conn()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000021CBAE27970>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 589, in send
+    resp = conn.urlopen(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021CBAE27970>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\wilme\Documentos\Coding\Project Writting Website\Zugus\Api_App\main.py", line 45, in create_token
+    response = requests.post(url, json=data, headers=headers)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\wilme\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\adapters.py", line 622, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8080): Max retries exceeded with url: /users/validate (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021CBAE27970>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))

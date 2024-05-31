@@ -119,8 +119,8 @@
   color: #fff;
   background: $brand-success;
 }
-.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-orange,
-.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-orange {
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-blue,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-blue {
   background: $brand-warning;
   color: #fff;
 }
@@ -271,7 +271,7 @@
     background-color: $brand-danger;
 }
 
-.bootstrap-switch.bootstrap-switch-on .bootstrap-switch-orange ~ .bootstrap-switch-default{
+.bootstrap-switch.bootstrap-switch-on .bootstrap-switch-blue ~ .bootstrap-switch-default{
     background-color: $brand-warning;
 }
 
@@ -290,7 +290,6 @@
 .bootstrap-switch.bootstrap-switch-off .bootstrap-switch-red,
 .bootstrap-switch.bootstrap-switch-off .bootstrap-switch-brown,
 .bootstrap-switch.bootstrap-switch-off .bootstrap-switch-blue,
-.bootstrap-switch.bootstrap-switch-off .bootstrap-switch-orange,
 .bootstrap-switch.bootstrap-switch-off .bootstrap-switch-green{
     background-color: $light-gray;
 }

@@ -4,9 +4,13 @@ from flask import request
 from flask_cors import CORS
 from flask_jwt_extended import create_access_token, verify_jwt_in_request
 from flask_jwt_extended import get_jwt_identity
+
+
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
 from flask_jwt_extended.exceptions import NoAuthorizationError
+from werkzeug.security import generate_password_hash
+
 
 import json
 import os
@@ -22,6 +26,7 @@ cors = CORS(app,  resources={r"/*": {"origins": "*"}})
 app.config["JWT_SECRET_KEY"] = "super-secret"
 jwt = JWTManager(app)
 
+
 #################[Lgin]##################
 
 
@@ -29,8 +34,7 @@ jwt = JWTManager(app)
 def create_token():
     global dataConfig
     data = request.get_json()
-    username = data.get('username')
-    password = data.get('password')
+
     token = dataConfig.get("token")
 
 
@@ -58,6 +62,31 @@ def create_token():
         return jsonify({"msg": "Token not found in configuration"}), 500
     else:
         return jsonify({"msg": "Bad username or password"}), 401
+
+
+@app.route('/register', methods=['POST'])
+def register_user():
+    data = request.json
+    username = data.get('username')
+    password = data.get('password')
+    headers = {'Content-Type': 'application/json'}
+    print(data)
+
+    # Forward the request to the Java backend
+    java_backend_url = 'http://127.0.0.1:8080/users'
+    java_response = requests.post(
+        java_backend_url,
+        json={'username': username,
+              'password': password,
+              'rol': "",},
+        headers=headers)
+
+
+    if java_response.status_code == 200:
+        return jsonify(java_response.json()), 200
+
+    else:
+        return jsonify({'msg': 'Registration failed', 'error': java_response.text}), java_response.status_code
 
 
 ###################   MiddleWare   #################

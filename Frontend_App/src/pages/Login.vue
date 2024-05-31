@@ -1,66 +1,81 @@
-<template>
-  <div class="page-header clear-filter" filter-color="orange">
+<template >
+  <div class="page-header clear-filter" filter-color="blue">
     <div
       class="page-header-image"
-      style="background-image: url('img/login.jpg')"
+      style="background-image: url('img/background/loginh.jpg')"
     ></div>
 
+    
+    
     <div class="content">
       <div class="container">
         <div class="col-md-5 ml-auto mr-auto">
-          <card type="login" plain>
+ 
+ 
+  <card 
+  class="card-signup"
+  header-classes="text-center" 
+  color="blue"
+  border-radius="10px"
+  style="position: absolute; right: 400px; top: -40px; width: 500px; height: 400px;"
+          >
 
-            <div slot="header" class="logo-container">
-              <img v-lazy="'img/now-logo.png'" alt="" />
-            </div>
-          
-  
-            <input
-              class="no-border input-lg"
+          <template>
+        
+          <fg-input
+              class="no-border"
               addon-left-icon="now-ui-icons users_circle-08"
               placeholder="Usrename"
               type="username" 
               v-model="data.username"
             >
-           
+          </fg-input>
+            
 
-            <input
-              class="no-border input-lg"
-              addon-left-icon="now-ui-icons text_caps-small"
+            <fg-input
+              class="no-border input-lg-padding"
+              addon-left-icon="now-ui-icons objects_key-25"
               placeholder="Password"
               type="password" 
               v-model="data.password"
             >
-       
+          </fg-input>
+          
+          <br>
+          <br>
+          <br>
 
             <button 
             @click="login"
-            class="btn btn-primary btn-round btn-lg btn-block"
+            class="btn btn-info btn-round btn-lg "
             >
             Login</button>
+      
+           <br>
+
+            <button 
+            @click="register"
+            class="btn btn-warning btn-round btn-lg "
+            >
+            Sign In</button>
 
 
 
-           
+          </template>
 
-            <template slot="raw-content">
-              <div class="pull-left">
-                <h6>
-                  <a href="#pablo" class="link footer-link">Create Account</a>
-                </h6>
-              </div>
-              <div class="pull-right">
-                <h6>
-                  <a href="#pablo" class="link footer-link">Need Help?</a>
-                </h6>
-              </div>
-            </template>
-          </card>
+         
+  </card>
+          
+          
         </div>
+    
+        
       </div>
+      
     </div>
     <main-footer></main-footer>
   </div>
+ 
 </template>
 
 
@@ -68,6 +83,7 @@
 import { Card, Button, FormGroupInput } from '@/components';
 import MainFooter from '@/layout/MainFooter';
 import axios from 'axios';
+import SignupForm from './components/SignupForm.vue';
 
 export default {
   data() {
@@ -98,11 +114,29 @@ export default {
             alert('Login failed');
         }
         } catch (error) {
-            console.error(error);
-            alert('An error occurred');
+            console.error(8081);
+            alert('Bad Username or Password');
     }
-  }
-  }
+  },
+ 
+  async register() {
+      try {
+        const response = await axios.post('http://127.0.0.1:7777/register', {
+          username: this.data.username,
+          password: this.data.password,
+        });
+        if (response.data.msg === "User created") {
+          console.log("User registered successfully");
+        } else {
+          console.log("Registration failed");
+          // Handle error during registration
+        }
+      } catch (error) {
+        console.error(error);
+        // Handle error during registration
+      }
+    }
+  },
 };
 </script>
 <style></style>

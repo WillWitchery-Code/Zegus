@@ -79,7 +79,7 @@
               type="neutral"
               tab-nav-wrapper-classes="card-header"
               tab-content-classes="card-body text-center"
-              data-background-color="orange"
+              data-background-color="blue"
             >
               <tab-pane>
                 <template slot="label">
