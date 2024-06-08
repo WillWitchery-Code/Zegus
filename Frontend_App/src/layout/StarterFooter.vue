@@ -9,7 +9,7 @@
         <ul>
           <img 
       class="n-logo" 
-      src="img/flags/CO.png"
+      src="img/icon/CO.png"
       width="30" />
       <a>&nbsp&nbsp&nbsp&nbsp</a>
       <img 

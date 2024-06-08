@@ -24,7 +24,7 @@
       <img 
       class="n-logo" 
       src="img/zegus_1.png"
-      width="30" />
+      width="25" />
       </router-link>
       <span style="color: black;">
         beta_

@@ -16,7 +16,8 @@
   class="card-signup"
   header-classes="text-center" 
   color="blue"
-  border-radius="10px"
+
+  border-radius="20px"
   style="position: absolute; right: 400px; top: -40px; width: 500px; height: 400px;"
           >
 
@@ -68,6 +69,9 @@
           
           
         </div>
+        <div>
+         
+        </div>
     
         
       </div>
@@ -83,7 +87,7 @@
 import { Card, Button, FormGroupInput } from '@/components';
 import MainFooter from '@/layout/MainFooter';
 import axios from 'axios';
-import SignupForm from './components/SignupForm.vue';
+import SignupForm from './SignupForm.vue';
 
 export default {
   data() {
@@ -126,15 +130,18 @@ export default {
           password: this.data.password,
         });
         if (response.data.msg === "User created") {
-          console.log("User registered successfully");
+          console.log("User registered successfully")
+          this.$router.push('/profile');
         } else {
           console.log("Registration failed");
           // Handle error during registration
         }
-      } catch (error) {
-        console.error(error);
-        // Handle error during registration
-      }
+        } catch (error) {
+            console.error(409);
+            alert('this Username already exists, please try another one');           
+        }
+    
+    
     }
   },
 };

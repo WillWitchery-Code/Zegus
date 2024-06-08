@@ -1,18 +1,19 @@
 package Security_App.Controllers;
-import Security_App.Models.Rol;
 import Security_App.Models.User;
 import Security_App.Repositories.UserRepository;
-import jakarta.servlet.http.HttpServletResponse;
-import Security_App.Repositories.RolRepository;
 
-//security 
+
+//security
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Optional;
 import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import org.springframework.http.ResponseEntity;
 //Decorators
 @CrossOrigin
 @RestController
@@ -24,38 +25,44 @@ public class UserController {
     private UserRepository Repository_User;
 
 
-    
+
     @GetMapping("")
     public List<User> index(){
         return this.Repository_User.findAll();
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping
-    public User create(@RequestBody User UsersInfo){
+
+    @PostMapping("/add")
+    public User create(@RequestBody User UsersInfo, final HttpServletResponse response) throws IOException {
+        User existingUser = this.Repository_User.getUserByUserName(UsersInfo.getUsername());
+        if (existingUser != null) {
+            response.sendError(HttpServletResponse.SC_CONFLICT, "User with this username already exists");
+            return null;
+        }
         UsersInfo.setPassword(convertirSHA256(UsersInfo.getPassword()));
+        response.sendError(HttpServletResponse.SC_CREATED, "User created");
         return this.Repository_User.save(UsersInfo);
     }
 
-    @GetMapping("{id}")
-    public User show(@PathVariable String id){
-        User ActualUser=this.Repository_User
-            .findById(id)
-            .orElse(null);
-        return ActualUser;
+    @GetMapping("/{id}")
+    public ResponseEntity<User> getUserProfile(@PathVariable String id) {
+        Optional<User> user = Repository_User.findById(id);
+        return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PutMapping("{id}")
-    public User update(@PathVariable String id,@RequestBody User UsersInfo){
-        User ActualUser=this.Repository_User
-            .findById(id)
-            .orElse(null);
-        if (ActualUser!=null){
-            ActualUser.setUsername(UsersInfo.getUsername());
-            ActualUser.setPassword(convertirSHA256(UsersInfo.getPassword()));
-            return this.Repository_User.save(ActualUser);
-        }else{
-            return null;
+    @PutMapping("/{id}")
+    public ResponseEntity<User> updateUserProfile(@PathVariable String id, @RequestBody User userDetails) {
+        Optional<User> user = Repository_User.findById(id);
+        if (user.isPresent()) {
+            User existingUser = user.get();
+            existingUser.setUsername(userDetails.getUsername());
+            existingUser.setPassword(convertirSHA256(userDetails.getPassword()));
+            existingUser.setRol(userDetails.getRol());
+            Repository_User.save(existingUser);
+            return ResponseEntity.ok(existingUser);
+        } else {
+            return ResponseEntity.notFound().build();
         }
     }
 
@@ -115,3 +122,4 @@ public class UserController {
     }
 
 }
+

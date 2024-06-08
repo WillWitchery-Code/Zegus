@@ -40,7 +40,7 @@ export default new Router({
       }
     },
     {
-      path: '/profile',
+      path: '/profile/:userId',
       name: 'profile',
       components: { default: Profile, header: MainNavbar, footer: MainFooter },
       props: {
