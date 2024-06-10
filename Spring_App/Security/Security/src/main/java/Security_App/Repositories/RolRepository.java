@@ -1,5 +1,6 @@
 package Security_App.Repositories;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import Security_App.Models.Permits;
 
 import Security_App.Models.Rol;
 

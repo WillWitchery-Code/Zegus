@@ -9,7 +9,10 @@ from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
 from flask_jwt_extended.exceptions import NoAuthorizationError
+from sqlalchemy.testing import db
 from werkzeug.security import generate_password_hash
+
+from pymongo import MongoClient
 
 
 import json
@@ -27,10 +30,11 @@ app.config["JWT_SECRET_KEY"] = "super-secret"
 jwt = JWTManager(app)
 
 
+
 #################[Lgin]##################
 @app.route("/login", methods=["POST"])
 def create_token():
-    global dataConfig
+
     data = request.get_json()
     token = dataConfig.get("token")
     headers = {"Content-Type": "application/json; charset=utf-8",
@@ -42,18 +46,20 @@ def create_token():
         user = response.json()
         expires = datetime.timedelta(seconds=60 * 60 * 24)
         access_token = create_access_token(identity=user, expires_delta=expires)
-        with open('config.json', 'r+') as f:
-            dataConfig = json.load(f)
-            dataConfig['token'] = access_token
-            f.seek(0)
-            json.dump(dataConfig, f, indent=4)
-            f.truncate()
-        return jsonify({"token": access_token, "user_id": user["_id"], "msg": "Token Created"})
+
+        find_user_id = user["_id"]
+        url_user_data = f"{dataConfig['url-backend-security']}/users/{find_user_id}"
+
+        return jsonify({"token": access_token,
+                        "user": user,
+                        "url_user_data": url_user_data,
+                        "msg": "Token Created"})
 
     if token is None:
         return jsonify({"msg": "Token not found in configuration"}), 500
     else:
         return jsonify({"msg": "Bad username or password"}), 401
+
 
 #################[Register]##################
 @app.route('/register', methods=['POST'])
@@ -69,6 +75,7 @@ def register_user():
         return jsonify({"msg": "User already created"}), 409
     else:
         return jsonify({'msg': 'Registration failed', 'error': response.text}), response.status_code
+
 
 ###################   MiddleWare   #################
 def limpiarURL(url):

@@ -10,28 +10,30 @@
         <div class="photo-container">
           <img src="img/ryan.jpg" alt="" />
         </div>
-        <h3 class="title">Ryan Scheinder</h3>
+        <h3 class="title">{{ userData.username }}</h3>
+        <h3 class="title">{{ userData.id_personal_info.name }}</h3>
+        <p class="category">{{ userData.id_personal_info.e_mail }}</p>
         <p class="category">Photographer</p>
-        <div class="content">
-          <div class="social-description">
-            <h2>26</h2>
-            <p>Comments</p>
-          </div>
-          <div class="social-description">
-            <h2>26</h2>
-            <p>Comments</p>
-          </div>
-          <div class="social-description">
-            <h2>48</h2>
-            <p>Bookmarks</p>
-          </div>
-        </div>
+      
+        <input
+              class="no-border"
+              addon-left-icon="now-ui-icons users_circle-08"
+              placeholder="Usrename"
+              type="username" 
+              v-model="data.username"
+             
+            >
+          </input>
+
+        <button @click="updateUserData" class="btn btn-primary btn-round">update</button>
+       
       </div>
+      
     </div>
     <div class="section">
       <div class="container">
         <div class="button-container">
-          <a href="#button" class="btn btn-primary btn-round btn-lg">Follow</a>
+          <a @click="alertUserData" href="#button" class="btn btn-primary btn-round btn-lg">Follow</a>
           <a
             href="#button"
             class="btn btn-default btn-round btn-lg btn-icon"
@@ -124,7 +126,9 @@
   </div>
 </template>
 <script>
+import axios from 'axios';
 import { Tabs, TabPane } from '@/components';
+
 
 export default {
   name: 'profile',
@@ -132,7 +136,68 @@ export default {
   components: {
     Tabs,
     TabPane
-  }
+  },
+
+  data() {
+    return {
+      data: {
+        username: '',
+        password: '',
+  
+      },
+        user:{
+          _id: '',
+        username: '',
+        password: '',
+        rol: null,
+        id_personal_info: {
+          _id: '',
+          name: '',
+          e_mail: '',
+        
+        }},
+        
+    };
+    
+  },
+  created() {
+    this.userData = JSON.parse(localStorage.getItem('user_info'));
+    this.urlUserData = JSON.parse(localStorage.getItem('user_url'));
+
+  },
+
+  methods: {
+    alertUserData() {
+      alert(JSON.stringify(this.userData.username));
+    },
+
+    async updateUserData() {
+      try {
+        const token = localStorage.getItem('token');
+        const url = this.urlUserData;
+
+        let updatedUser = {...this.user, username: this.data.username};
+        
+     
+        const response = await axios.put(url, updatedUser, {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+          },
+        });
+
+
+        if (response.status === 200) {
+          alert('User updated successfully');
+          this.user.username = this.data.username;
+          localStorage.setItem('user', JSON.stringify(this.user));
+        }
+      } catch (error) {
+        console.error(error); 
+      };
+  },
+  },
+
 };
 </script>
 <style></style>

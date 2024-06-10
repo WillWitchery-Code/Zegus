@@ -1,6 +1,9 @@
 package Security_App.Controllers;
 import Security_App.Models.User;
+import Security_App.Repositories.PI_UserRepository;
+import Security_App.Repositories.PersonalInfoRepository;
 import Security_App.Repositories.UserRepository;
+import Security_App.Models.PersonalInfo;
 
 
 //security
@@ -23,8 +26,8 @@ import org.springframework.http.ResponseEntity;
 public class UserController {
     @Autowired
     private UserRepository Repository_User;
-
-
+    @Autowired
+    private PersonalInfoRepository Repository_PI;
 
     @GetMapping("")
     public List<User> index(){
@@ -36,10 +39,17 @@ public class UserController {
     @PostMapping("/add")
     public User create(@RequestBody User UsersInfo, final HttpServletResponse response) throws IOException {
         User existingUser = this.Repository_User.getUserByUserName(UsersInfo.getUsername());
+
         if (existingUser != null) {
             response.sendError(HttpServletResponse.SC_CONFLICT, "User with this username already exists");
             return null;
         }
+        PersonalInfo newPersonalInfo = new PersonalInfo();
+        newPersonalInfo = Repository_PI.save(newPersonalInfo);
+        UsersInfo.setID_personal_info(newPersonalInfo);
+
+
+
         UsersInfo.setPassword(convertirSHA256(UsersInfo.getPassword()));
         response.sendError(HttpServletResponse.SC_CREATED, "User created");
         return this.Repository_User.save(UsersInfo);
@@ -58,7 +68,7 @@ public class UserController {
             User existingUser = user.get();
             existingUser.setUsername(userDetails.getUsername());
             existingUser.setPassword(convertirSHA256(userDetails.getPassword()));
-            existingUser.setRol(userDetails.getRol());
+            existingUser.setID_personal_info(userDetails.getID_personal_info());
             Repository_User.save(existingUser);
             return ResponseEntity.ok(existingUser);
         } else {
@@ -76,21 +86,6 @@ public class UserController {
             this.Repository_User.delete(ActualUser);
         }
     }
-
-        /**
-    * Relation (1 to n) rol - user
-    * @param id
-    * @param id_rol
-    * @return
-    */
-    @PutMapping("{id}/rol/{id_rol}")
-    public User asignRol_Usuario(@PathVariable String id,@PathVariable String id_rol){
-        User actualUser=this.Repository_User.findById(id).orElseThrow(RuntimeException::new);
-        // Rol rolActual=this.Repository_Rol.findById(id_rol).orElseThrow(RuntimeException::new);
-        //actualUser.setRol(rolActual);
-        return this.Repository_User.save(actualUser);
-        }
-
     
     @PostMapping("/validate")
     public User validate(@RequestBody User infoUser, final HttpServletResponse response) throws IOException {
@@ -98,6 +93,7 @@ public class UserController {
         if (actualUser!=null && actualUser.getPassword().equals(convertirSHA256(infoUser.getPassword()))) {
             actualUser.setPassword("");
             return actualUser;
+
         }else{
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
         return null;

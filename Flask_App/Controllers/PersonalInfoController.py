@@ -16,9 +16,9 @@ class ControlPersonalInformation():
         PerInfo = PersonalInformation(self.RepositoriePerInfo.findById(id))
         return PerInfo.__dict__
 
-
-    #def update(self,id,elEstudiante):
-    #    print("Update PersonalInformation with id ", id)
+    def update(self,id,PersonalInfo):
+        PerInfo = PersonalInformation(PersonalInfo)
+        return self.RepositoriePerInfo.update(id,PerInfo)
 
     def delete(self,id):
         return self.RepositoriePerInfo.delete(id)

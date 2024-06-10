@@ -87,13 +87,19 @@
 import { Card, Button, FormGroupInput } from '@/components';
 import MainFooter from '@/layout/MainFooter';
 import axios from 'axios';
-import SignupForm from './SignupForm.vue';
+import SignupForm from './components/SignupForm.vue';
 
 export default {
   data() {
     return {
-        data: {username: '', password: ''
-      }
+        data: {
+          username: '', 
+          password: ''
+      },
+            userData: {
+              name: '',
+              e_mail: '',
+            },
     };
 
   },
@@ -109,12 +115,29 @@ export default {
         const response = await axios.post('http://127.0.0.1:7777/login', {
           username: this.data.username,
           password: this.data.password,
-        });
+        }   
+      );
 
-        if  (response.data.msg === 'Token Created') {
-              localStorage.setItem('token', response.data.token);
-              this.$router.push('/profile');
-        } else {
+        if  (response.status === 200) {
+         
+                  
+          const user = response.data.user;
+          localStorage.setItem('user_info', JSON.stringify(user));
+
+          const url_user_data = response.data.url_user_data;
+          localStorage.setItem('user_url',JSON.stringify(url_user_data));
+
+                        
+          this.$router.push('/profile');
+          
+          
+
+          
+              
+        }
+
+
+        else {
             alert('Login failed');
         }
         } catch (error) {
