@@ -23,7 +23,7 @@ public class User {
     @DBRef 
     private Rol rol;
     @DBRef
-    private PersonalInfo id_personal_info;
+    private PersonalInfo personalInfo;
 
 
     public User(String username, String password) {
@@ -55,7 +55,7 @@ public class User {
         this.rol = rol;
     }
 
-    public PersonalInfo getID_personal_info() {return id_personal_info;}
-    public void setID_personal_info(PersonalInfo piUser) {this.id_personal_info = piUser;}
+    public PersonalInfo getpersonalInfo() {return personalInfo;}
+    public void setpersonalInfo(PersonalInfo personalInfo) {this.personalInfo = personalInfo;}
 }
         

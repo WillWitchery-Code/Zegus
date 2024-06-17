@@ -2,17 +2,20 @@
 
 .form-control {
     background-color: $transparent-bg;
+    margin: 10px;
     border: 1px solid $light-gray;
     border-radius: $btn-round-radius;
     color: $black-color;
     line-height: normal;
     font-size: $font-size-small;
     height: 100%;
+    width: 60%;
+    align-items: center;
     @include transition-input-focus-color();
     @include box-shadow(none);
 
     .has-success &{
-        border-color: $light-gray;
+        border-color: $dark-gray;
     }
 
     &:focus{
@@ -174,6 +177,7 @@
     border-radius: $btn-round-radius;
     color: $dark-background;
 
+
     @include transition-input-focus-color();
 
     .input-group-focus &{
@@ -322,3 +326,4 @@ textarea.form-control{
   height: 100%;
   z-index: 100;
 }
+

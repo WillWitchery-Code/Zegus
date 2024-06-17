@@ -1,6 +1,5 @@
 package Security_App.Controllers;
 import Security_App.Models.User;
-import Security_App.Repositories.PI_UserRepository;
 import Security_App.Repositories.PersonalInfoRepository;
 import Security_App.Repositories.UserRepository;
 import Security_App.Models.PersonalInfo;
@@ -17,6 +16,9 @@ import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import org.springframework.http.ResponseEntity;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 //Decorators
 @CrossOrigin
 @RestController
@@ -46,7 +48,7 @@ public class UserController {
         }
         PersonalInfo newPersonalInfo = new PersonalInfo();
         newPersonalInfo = Repository_PI.save(newPersonalInfo);
-        UsersInfo.setID_personal_info(newPersonalInfo);
+        UsersInfo.setpersonalInfo(newPersonalInfo);
 
 
 
@@ -66,9 +68,11 @@ public class UserController {
         Optional<User> user = Repository_User.findById(id);
         if (user.isPresent()) {
             User existingUser = user.get();
-            existingUser.setUsername(userDetails.getUsername());
+
+
+
             existingUser.setPassword(convertirSHA256(userDetails.getPassword()));
-            existingUser.setID_personal_info(userDetails.getID_personal_info());
+
             Repository_User.save(existingUser);
             return ResponseEntity.ok(existingUser);
         } else {
@@ -99,6 +103,8 @@ public class UserController {
         return null;
         }
     }
+
+
 
     public String convertirSHA256(String password) {
         MessageDigest md = null;

@@ -11,22 +11,11 @@
           <img src="img/ryan.jpg" alt="" />
         </div>
         <h3 class="title">{{ userData.username }}</h3>
-        <h3 class="title">{{ userData.id_personal_info.name }}</h3>
-        <p class="category">{{ userData.id_personal_info.e_mail }}</p>
-        <p class="category">Photographer</p>
+        <h3 class="title">{{ userData.personalInfo.name + "&nbsp"}}{{"&nbsp" + userData.personalInfo.last_name }}</h3>
+        <p class="category">{{ userData.personalInfo.e_mail }}</p>
+        <p class="category">{{ userData.personalInfo.profession }}</p>
+        <p class="category">{{ userData.personalInfo.city }}</p>
       
-        <input
-              class="no-border"
-              addon-left-icon="now-ui-icons users_circle-08"
-              placeholder="Usrename"
-              type="username" 
-              v-model="data.username"
-             
-            >
-          </input>
-
-        <button @click="updateUserData" class="btn btn-primary btn-round">update</button>
-       
       </div>
       
     </div>
@@ -51,13 +40,23 @@
             <i class="fab fa-instagram"></i>
           </a>
         </div>
-        <h3 class="title">About me</h3>
+        <h3 class="title">About Me</h3>
         <h5 class="description">
-          An artist of considerable range, Ryan — the name taken by
-          Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and
-          records all of his own music, giving it a warm, intimate feel with a
-          solid groove structure. An artist of considerable range.
+          {{ userData.personalInfo.description }}
         </h5>
+        <h3 class="title">Social Media Links</h3>
+        <p align="center">
+          {{ userData.personalInfo.link1}}
+        </p>
+        <p align="center">
+          {{ userData.personalInfo.link2}}
+        </p>
+        <p align="center">
+          {{ userData.personalInfo.link3}}
+        </p>
+        <p align="center">
+          {{ userData.personalInfo.link4}}
+        </p>
         <div class="row">
           <div class="col-md-6 ml-auto mr-auto">
             <h4 class="title text-center">My Portfolio</h4>
@@ -150,7 +149,7 @@ export default {
         username: '',
         password: '',
         rol: null,
-        id_personal_info: {
+        personalInfo: {
           _id: '',
           name: '',
           e_mail: '',
@@ -162,40 +161,19 @@ export default {
   },
   created() {
     this.userData = JSON.parse(localStorage.getItem('user_info'));
-    this.urlUserData = JSON.parse(localStorage.getItem('user_url'));
+    
+    this.urlUserData = JSON.parse(localStorage.getItem('user_data_url'));
+    this.urlUser = JSON.parse(localStorage.getItem('user_url'));
+    
+    this.veri = JSON.parse(localStorage.getItem('loged_v'));
 
   },
 
   methods: {
     alertUserData() {
-      alert(JSON.stringify(this.userData.username));
+      alert(JSON.stringify(this.veri));
     },
 
-    async updateUserData() {
-      try {
-        const token = localStorage.getItem('token');
-        const url = this.urlUserData;
-
-        let updatedUser = {...this.user, username: this.data.username};
-        
-     
-        const response = await axios.put(url, updatedUser, {
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`,
-          },
-        });
-
-
-        if (response.status === 200) {
-          alert('User updated successfully');
-          this.user.username = this.data.username;
-          localStorage.setItem('user', JSON.stringify(this.user));
-        }
-      } catch (error) {
-        console.error(error); 
-      };
-  },
   },
 
 };

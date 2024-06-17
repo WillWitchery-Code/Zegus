@@ -44,15 +44,20 @@ def create_token():
 
     if response.status_code == 200:
         user = response.json()
+
         expires = datetime.timedelta(seconds=60 * 60 * 24)
         access_token = create_access_token(identity=user, expires_delta=expires)
 
         find_user_id = user["_id"]
-        url_user_data = f"{dataConfig['url-backend-security']}/users/{find_user_id}"
+        personal_info_id = user.get("personalInfo", {}).get("_id")
+
+        url_user = f"{dataConfig['url-backend-security']}/users/{find_user_id}"
+        url_personal_info = f"{dataConfig['url-backend-security']}/personal_info/{personal_info_id}"
 
         return jsonify({"token": access_token,
                         "user": user,
-                        "url_user_data": url_user_data,
+                        "url_user": url_user,
+                        "url_user_data": url_personal_info,
                         "msg": "Token Created"})
 
     if token is None:
@@ -60,7 +65,19 @@ def create_token():
     else:
         return jsonify({"msg": "Bad username or password"}), 401
 
+#################[LogOut]##################
+@app.route("/logout", methods=["POST"])
+def close_session():
+    global dataConfig
+    headers = {"Content-Type": "application/json; charset=utf-8",
+               "Authorization": "Bearer " + dataConfig.get("token")}
+    url = dataConfig["url-backend-security"] + '/users/logout'
+    response = requests.post(url, headers=headers)
 
+    if response.status_code == 200:
+        return jsonify({"msg": "Session closed successfully"})
+    else:
+        return jsonify({"msg": "Failed to close session"}), response.status_code
 #################[Register]##################
 @app.route('/register', methods=['POST'])
 def register_user():

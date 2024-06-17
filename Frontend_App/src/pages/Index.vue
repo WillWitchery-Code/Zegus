@@ -37,32 +37,25 @@
             <img src="img/invision-white-slim.png" class="invision-logo" /> </a>        >.
         </h6>
       </div>
-      
+      <main-footer></main-footer>
     </div>
    
 
-  
+    
     
   </div>
 
 </template>
 <script>
 import { Parallax } from '@/components';
-import BasicElements from './components/BasicElementsSection';
-import Navigation from './components/Navigation';
-import TabsSection from './components/Tabs';
-import ProgressPagination from './components/ProgressPagination';
-import Notifications from './components/Notifications';
-import Typography from './components/Typography';
-import JavascriptComponents from './components/JavascriptComponents';
-import NucleoIconsSection from './components/NucleoIconsSection';
-import ExamplesSection from './components/ExamplesSection';
-import DownloadSection from './components/DownloadSection';
-
+import MainFooter from '@/layout/MainFooter';
 export default {
   name: 'index',
   bodyClass: 'index-page',
   components: {   
+
+    
+    MainFooter
    
     
   }

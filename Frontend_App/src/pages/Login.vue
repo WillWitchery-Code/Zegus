@@ -18,6 +18,61 @@
   color="blue"
 
   border-radius="20px"
+  style="position: absolute; right: 400px; top: -40px; width: 200px; height: 400px;"
+          >
+
+          <template>
+        
+          <fg-input
+              class="no-border"
+              addon-left-icon="now-ui-icons users_circle-08"
+              placeholder="Usrename"
+              type="username" 
+              v-model="data.username"
+            >
+          </fg-input>
+            
+
+            <fg-input
+              class="no-border input-lg-padding"
+              addon-left-icon="now-ui-icons objects_key-25"
+              placeholder="Password"
+              type="password" 
+              v-model="data.password"
+            >
+          </fg-input>
+          
+          <br>
+          <br>
+          <br>
+
+            <button 
+            @click="login"
+            class="btn btn-info btn-round btn-lg "
+            >
+            Login</button>
+      
+           <br>
+
+            <button 
+            @click="register"
+            class="btn btn-warning btn-round btn-lg "
+            >
+            Sign In</button>
+
+
+
+          </template>
+
+         
+  </card>
+
+  <card 
+  class="card-login2"
+  header-classes="text-center" 
+  color="blue"
+
+  border-radius="20px"
   style="position: absolute; right: 400px; top: -40px; width: 500px; height: 400px;"
           >
 
@@ -109,6 +164,7 @@ export default {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput
   },
+
   methods: {
     async login() {
      try {
@@ -118,21 +174,23 @@ export default {
         }   
       );
 
-        if  (response.status === 200) {
-         
-                  
+        if  (response.status === 200) {         
+                 
           const user = response.data.user;
           localStorage.setItem('user_info', JSON.stringify(user));
 
-          const url_user_data = response.data.url_user_data;
-          localStorage.setItem('user_url',JSON.stringify(url_user_data));
+          const url_user = response.data.url_user;
+          localStorage.setItem('user_url',JSON.stringify(url_user));
 
+          const url_user_data = response.data.url_user_data;
+          localStorage.setItem('user_data_url',JSON.stringify(url_user_data));
+
+          const passw = this.data.password;
+          localStorage.setItem('passw', JSON.stringify(passw));
+
+          localStorage.setItem('loged_v', '1');
                         
           this.$router.push('/profile');
-          
-          
-
-          
               
         }
 

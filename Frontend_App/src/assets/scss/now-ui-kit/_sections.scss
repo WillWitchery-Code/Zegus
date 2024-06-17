@@ -1,7 +1,8 @@
 .section{
     padding: 70px 0;
     position: relative;
-    background: $white-color;
+    background: $transparent-bg;
+    ;
 
     .row + .category{
         margin-top: $margin-base-vertical;
@@ -30,6 +31,7 @@
     margin-top: 12%;
     text-align: center;
     margin-bottom: 50px;
+    
   }
 
   &.page-header-small{
@@ -269,8 +271,9 @@
 }
 
 .section-images{
-    max-height: 670px;
-    height: 670px;
+    max-height: 2000px;
+    height: 2000px;
+   
 
     .hero-images-container,
     .hero-images-container-1,

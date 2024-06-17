@@ -3,9 +3,10 @@
 .form-group {
   .el-input__inner {
     @extend .form-control;
-    width: 100%;
+    width: 80%;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+
   }
   .el-select{
     width: 100%;
