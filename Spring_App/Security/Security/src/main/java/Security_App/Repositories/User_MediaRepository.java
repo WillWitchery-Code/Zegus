@@ -1,4 +1,7 @@
 package Security_App.Repositories;
 
-public interface User_MediaRepository {
+import org.springframework.data.mongodb.repository.MongoRepository;
+import Security_App.Models.User_Media;
+
+public interface User_MediaRepository extends MongoRepository<User_Media, String> {
 }

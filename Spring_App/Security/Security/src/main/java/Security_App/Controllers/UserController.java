@@ -1,11 +1,13 @@
 package Security_App.Controllers;
 import Security_App.Models.User;
+import Security_App.Models.User_Media;
 import Security_App.Repositories.PersonalInfoRepository;
 import Security_App.Repositories.UserRepository;
 import Security_App.Models.PersonalInfo;
 
 
 //security
+import Security_App.Repositories.User_MediaRepository;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,6 +32,8 @@ public class UserController {
     private UserRepository Repository_User;
     @Autowired
     private PersonalInfoRepository Repository_PI;
+    @Autowired
+    private User_MediaRepository Repository_UM;
 
     @GetMapping("")
     public List<User> index(){
@@ -50,7 +54,9 @@ public class UserController {
         newPersonalInfo = Repository_PI.save(newPersonalInfo);
         UsersInfo.setpersonalInfo(newPersonalInfo);
 
-
+        User_Media newMedia = new User_Media();
+        newMedia = Repository_UM.save(newMedia);
+        UsersInfo.setuser_media(newMedia);
 
         UsersInfo.setPassword(convertirSHA256(UsersInfo.getPassword()));
         response.sendError(HttpServletResponse.SC_CREATED, "User created");

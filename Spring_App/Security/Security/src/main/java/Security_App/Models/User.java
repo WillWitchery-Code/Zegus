@@ -24,6 +24,8 @@ public class User {
     private Rol rol;
     @DBRef
     private PersonalInfo personalInfo;
+    @DBRef
+    private User_Media user_media;
 
 
     public User(String username, String password) {
@@ -57,5 +59,8 @@ public class User {
 
     public PersonalInfo getpersonalInfo() {return personalInfo;}
     public void setpersonalInfo(PersonalInfo personalInfo) {this.personalInfo = personalInfo;}
+
+    public User_Media getuser_media() {return user_media;}
+    public void setuser_media(User_Media user_media) {this.user_media = user_media;}
 }
         

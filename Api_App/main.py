@@ -31,6 +31,7 @@ jwt = JWTManager(app)
 
 
 
+
 #################[Lgin]##################
 @app.route("/login", methods=["POST"])
 def create_token():
@@ -51,13 +52,23 @@ def create_token():
         find_user_id = user["_id"]
         personal_info_id = user.get("personalInfo", {}).get("_id")
 
+        profile_pic_id = user.get("user_media", {}).get("profilePictureId")
+        cover_media_id = user.get("user_media", {}).get("coverPictureId")
+
         url_user = f"{dataConfig['url-backend-security']}/users/{find_user_id}"
         url_personal_info = f"{dataConfig['url-backend-security']}/personal_info/{personal_info_id}"
+
+        url_profile_pic = f"{dataConfig['url-backend-security']}/user-media/ProfilePicture/{profile_pic_id}"
+        url_cover_pic = f"{dataConfig['url-backend-security']}/user-media/CoverPicture/{cover_media_id}"
+
+
 
         return jsonify({"token": access_token,
                         "user": user,
                         "url_user": url_user,
                         "url_user_data": url_personal_info,
+                        "url_profile_pic": url_profile_pic,
+                        "url_cover_pic": url_cover_pic,
                         "msg": "Token Created"})
 
     if token is None:

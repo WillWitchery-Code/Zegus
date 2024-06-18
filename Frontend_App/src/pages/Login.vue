@@ -185,6 +185,12 @@ export default {
           const url_user_data = response.data.url_user_data;
           localStorage.setItem('user_data_url',JSON.stringify(url_user_data));
 
+          const url_profile_img = response.data.url_profile_pic;
+          localStorage.setItem('url_profile_img',JSON.stringify(url_profile_img));
+
+          const url_cover_img = response.data.url_cover_pic;
+          localStorage.setItem('url_cover_img',JSON.stringify(url_cover_img));
+
           const passw = this.data.password;
           localStorage.setItem('passw', JSON.stringify(passw));
 

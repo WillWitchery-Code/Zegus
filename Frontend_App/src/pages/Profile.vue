@@ -1,14 +1,15 @@
 <template>
-  <div>
-    <div class="page-header clear-filter" filter-color="blue">
-      <parallax
-        class="page-header-image"
-        style="background-image:url('img/bg5.jpg')"
+  <div><div></div>
+    
+    <div class="page-header clear-filter " filter-color="blue">
+      <img :src= "Cover_img" alt="Cover Picture"
+        class="page-header-image"   
       >
-      </parallax>
+      
+
       <div class="container">
         <div class="photo-container">
-          <img src="img/ryan.jpg" alt="" />
+          <img :src="Profile_img" alt="Profile Picture">
         </div>
         <h3 class="title">{{ userData.username }}</h3>
         <h3 class="title">{{ userData.personalInfo.name + "&nbsp"}}{{"&nbsp" + userData.personalInfo.last_name }}</h3>
@@ -19,26 +20,12 @@
       </div>
       
     </div>
-    <div class="section">
+    <div class="page-background custom-bg-color">
+    <div class="section ">
       <div class="container">
         <div class="button-container">
           <a @click="alertUserData" href="#button" class="btn btn-primary btn-round btn-lg">Follow</a>
-          <a
-            href="#button"
-            class="btn btn-default btn-round btn-lg btn-icon"
-            rel="tooltip"
-            title="Follow me on Twitter"
-          >
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a
-            href="#button"
-            class="btn btn-default btn-round btn-lg btn-icon"
-            rel="tooltip"
-            title="Follow me on Instagram"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
+          
         </div>
         <h3 class="title">About Me</h3>
         <h5 class="description">
@@ -122,11 +109,13 @@
         </div>
       </div>
     </div>
-  </div>
+  </div></div>
 </template>
 <script>
 import axios from 'axios';
 import { Tabs, TabPane } from '@/components';
+
+
 
 
 export default {
@@ -142,6 +131,8 @@ export default {
       data: {
         username: '',
         password: '',
+        urlUserMedia: null,
+        profilePictureSrc: ''
   
       },
         user:{
@@ -155,6 +146,7 @@ export default {
           e_mail: '',
         
         }},
+        profilePictureSrc: '',
         
     };
     
@@ -165,17 +157,30 @@ export default {
     this.urlUserData = JSON.parse(localStorage.getItem('user_data_url'));
     this.urlUser = JSON.parse(localStorage.getItem('user_url'));
     
+    this.Profile_img = JSON.parse(localStorage.getItem('url_profile_img'));
+    this.Cover_img = JSON.parse(localStorage.getItem('url_cover_img'));
+    
     this.veri = JSON.parse(localStorage.getItem('loged_v'));
+    
 
+    
   },
 
   methods: {
-    alertUserData() {
-      alert(JSON.stringify(this.veri));
-    },
 
-  },
+    
+   
+   
+   
+    
+  }
+
+ 
 
 };
 </script>
-<style></style>
+<style>
+.custom-bg-color {
+  background-color: #D3D3D3; /* Change this to your desired background color */
+}
+</style>
