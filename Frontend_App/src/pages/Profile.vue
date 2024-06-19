@@ -24,7 +24,7 @@
     <div class="section ">
       <div class="container">
         <div class="button-container">
-          <a @click="alertUserData" href="#button" class="btn btn-primary btn-round btn-lg">Follow</a>
+          <a @click="alertUserData" href="#button" class="btn btn-primary btn-lg">Follow</a>
           
         </div>
         <h3 class="title">About Me</h3>
@@ -157,8 +157,8 @@ export default {
     this.urlUserData = JSON.parse(localStorage.getItem('user_data_url'));
     this.urlUser = JSON.parse(localStorage.getItem('user_url'));
     
-    this.Profile_img = JSON.parse(localStorage.getItem('url_profile_img'));
-    this.Cover_img = JSON.parse(localStorage.getItem('url_cover_img'));
+    this.Profile_img = JSON.parse(localStorage.getItem('get_profile_img'));
+    this.Cover_img = JSON.parse(localStorage.getItem('get_cover_img'));
     
     this.veri = JSON.parse(localStorage.getItem('loged_v'));
     

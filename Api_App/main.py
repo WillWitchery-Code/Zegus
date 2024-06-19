@@ -34,6 +34,8 @@ jwt = JWTManager(app)
 
 #################[Lgin]##################
 @app.route("/login", methods=["POST"])
+
+
 def create_token():
 
     data = request.get_json()
@@ -43,14 +45,18 @@ def create_token():
     url = dataConfig["url-backend-security"] + '/users/validate'
     response = requests.post(url, json=data, headers=headers)
 
+
+
     if response.status_code == 200:
         user = response.json()
+
 
         expires = datetime.timedelta(seconds=60 * 60 * 24)
         access_token = create_access_token(identity=user, expires_delta=expires)
 
         find_user_id = user["_id"]
         personal_info_id = user.get("personalInfo", {}).get("_id")
+        media_user_id = user.get("user_media", {}).get("_id")
 
         profile_pic_id = user.get("user_media", {}).get("profilePictureId")
         cover_media_id = user.get("user_media", {}).get("coverPictureId")
@@ -58,8 +64,21 @@ def create_token():
         url_user = f"{dataConfig['url-backend-security']}/users/{find_user_id}"
         url_personal_info = f"{dataConfig['url-backend-security']}/personal_info/{personal_info_id}"
 
-        url_profile_pic = f"{dataConfig['url-backend-security']}/user-media/ProfilePicture/{profile_pic_id}"
-        url_cover_pic = f"{dataConfig['url-backend-security']}/user-media/CoverPicture/{cover_media_id}"
+        get_profile_pic = f"{dataConfig['url-backend-security']}/user-media/{profile_pic_id}"
+        get_cover_pic = f"{dataConfig['url-backend-security']}/user-media/{cover_media_id}"
+
+        put_profile_pic = f"{dataConfig['url-backend-security']}/user-media/ProfilePicture/{media_user_id}"
+        put_cover_pic = f"{dataConfig['url-backend-security']}/user-media/CoverPicture/{media_user_id}"
+        url_new_shares = f"{dataConfig['url-backend-security']}/sharings"
+
+        sharings = get_sharings()
+
+        print(sharings)
+
+
+
+
+
 
 
 
@@ -67,9 +86,17 @@ def create_token():
                         "user": user,
                         "url_user": url_user,
                         "url_user_data": url_personal_info,
-                        "url_profile_pic": url_profile_pic,
-                        "url_cover_pic": url_cover_pic,
+                        "url_new_shares": url_new_shares,
+                        "get_profile_pic": get_profile_pic,
+                        "get_cover_pic": get_cover_pic,
+                        "set_profile_pic": put_profile_pic,
+                        "set_cover_pic": put_cover_pic,
+                        "sharings": sharings,
+
+
                         "msg": "Token Created"})
+
+
 
     if token is None:
         return jsonify({"msg": "Token not found in configuration"}), 500
@@ -112,6 +139,23 @@ def limpiarURL(url):
         if re.search('\\d', laParte):
             url = url.replace(laParte, "?")
     return url
+
+
+def get_sharings():
+    global dataConfig
+    url_sharings = dataConfig["url-backend-security"] + "/sharings"
+    try:
+        response = requests.get(url_sharings)
+        sharings = response.json()
+
+        content = [item["content"] for item in sharings]
+
+
+        return content
+
+    except Exception as e:
+        return {"error": str(e)}
+
 ###################   Redirection   #################
 @app.route("/", methods=['GET'])
 def test():
@@ -129,3 +173,4 @@ if __name__ == '__main__':
     dataConfig = loadFileConfig()
     print("Server running : " + "http://" + dataConfig["url-backend"] + ":" + str(dataConfig["port"]))
     serve(app, host=dataConfig["url-backend"], port=dataConfig["port"])
+

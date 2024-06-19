@@ -4,12 +4,12 @@
     background-color: $transparent-bg;
     margin: 10px;
     border: 1px solid $light-gray;
-    border-radius: $btn-round-radius;
+    border-radius: $border-radius-small;
     color: $black-color;
     line-height: normal;
     font-size: $font-size-small;
-    height: 100%;
-    width: 60%;
+    height: 60%;
+    width: 100%;
     align-items: center;
     @include transition-input-focus-color();
     @include box-shadow(none);

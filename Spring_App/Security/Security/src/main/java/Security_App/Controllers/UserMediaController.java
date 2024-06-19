@@ -27,10 +27,7 @@ public class UserMediaController {
     @Autowired
     private User_MediaRepository Repository_UM;
 
-    @PostMapping("/{id}")
-    public User_Media uploadProfilePicture(@RequestParam("file") MultipartFile file) throws IOException {
-        return userMediaService.saveProfilePicture(file);
-    }
+
 
     @PutMapping("/ProfilePicture/{id}")
     public User_Media updateProfilePicture(@PathVariable String id, User_Media userMedia, @RequestParam("file") MultipartFile file) throws IOException {
@@ -56,7 +53,7 @@ public class UserMediaController {
                 .orElse(null);
 
         if (userMedia != null) {
-            userMediaService.deleteCoverPicture(userMedia.getProfilePictureId());
+            userMediaService.deleteCoverPicture(userMedia.getCoverPictureId());
             return userMediaService.updateCoverPicture(id, file);
 
         } else {
@@ -65,14 +62,12 @@ public class UserMediaController {
     }
 
 
-
-
-
-
-    @GetMapping("/ProfilePicture/{iid}")
-    public ResponseEntity<InputStreamResource> getProfilePicture(@PathVariable String iid, User_Media userMedia) throws IOException {
+    @GetMapping("/gProfilePicture/{iid}")
+    public ResponseEntity<Object> ggProfilePicture(@PathVariable String iid, User_Media userMedia) throws IOException {
 
         GridFSFile gridFsFile = userMediaService.getProfilePicture(iid);
+
+
         if (gridFsFile == null) {
             return ResponseEntity.notFound().build();
         }
@@ -81,11 +76,14 @@ public class UserMediaController {
                 .contentType(MediaType.parseMediaType(gridFsFile.getMetadata().getString("_contentType")))
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + gridFsFile.getFilename() + "\"")
                 .body(new InputStreamResource(gridFsOperations.getResource(gridFsFile).getInputStream()));
+
+
     }
 
-    @GetMapping("/CoverPicture/{_id}")
-    public ResponseEntity<InputStreamResource> getCoverPicture(@PathVariable String _id, User_Media userMedia) throws IOException {
-        GridFSFile gridFsFile = userMediaService.getCoverPicture(_id);
+
+    @GetMapping("/{id}")
+    public ResponseEntity<InputStreamResource> getCoverPicture(@PathVariable String id, User_Media userMedia) throws IOException {
+        GridFSFile gridFsFile = userMediaService.getCoverPicture(id);
         if (gridFsFile == null) {
             return ResponseEntity.notFound().build();
         }

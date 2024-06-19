@@ -103,7 +103,7 @@
 
             <button 
             @click="login"
-            class="btn btn-info btn-round btn-lg "
+            class="btn btn-info btn-lg "
             >
             Login</button>
       
@@ -111,7 +111,7 @@
 
             <button 
             @click="register"
-            class="btn btn-warning btn-round btn-lg "
+            class="btn btn-warning btn-lg "
             >
             Sign In</button>
 
@@ -185,14 +185,29 @@ export default {
           const url_user_data = response.data.url_user_data;
           localStorage.setItem('user_data_url',JSON.stringify(url_user_data));
 
-          const url_profile_img = response.data.url_profile_pic;
-          localStorage.setItem('url_profile_img',JSON.stringify(url_profile_img));
+          const url_new_shares = response.data.url_new_shares;
+          localStorage.setItem('url_new_shares',JSON.stringify(url_new_shares));
 
-          const url_cover_img = response.data.url_cover_pic;
-          localStorage.setItem('url_cover_img',JSON.stringify(url_cover_img));
+          const get_profile_img = response.data.get_profile_pic;
+          localStorage.setItem('get_profile_img',JSON.stringify(get_profile_img));
+
+          const get_cover_img = response.data.get_cover_pic;
+          localStorage.setItem('get_cover_img',JSON.stringify(get_cover_img));
+
+          
+          const set_profile_pic = response.data.set_profile_pic;
+          localStorage.setItem('set_profile_pic',JSON.stringify(set_profile_pic));
+
+          const set_cover_pic = response.data.set_cover_pic;
+          localStorage.setItem('set_cover_pic',JSON.stringify(set_cover_pic));
+
+          const sharings = response.data.sharings;
+          localStorage.setItem('sharings',JSON.stringify(sharings));
 
           const passw = this.data.password;
           localStorage.setItem('passw', JSON.stringify(passw));
+
+          
 
           localStorage.setItem('loged_v', '1');
                         

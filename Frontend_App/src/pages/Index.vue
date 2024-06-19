@@ -19,7 +19,7 @@
           <div class="col text-center">
         <router-link
           to="/login"
-          class="btn btn-info btn-round btn-lg btn-border 
+          class="btn btn-info  btn-lg btn-border 
           border: 10px solid black;"
           
         >

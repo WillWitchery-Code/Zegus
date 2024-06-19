@@ -9,8 +9,8 @@
     }
 
     .card &{
-        border-top-right-radius: $border-radius-small;
-        border-top-left-radius: $border-radius-small;
+        border-top-right-radius: $border-thin;
+        border-top-left-radius: $border-thin;
     }
 
     > .nav-item{
@@ -20,7 +20,7 @@
             margin-right: 5px;
             background-color: $transparent-bg;
             border: 1px solid $transparent-bg;
-            border-radius: 30px;
+            border-radius: 5px;
             font-size: $font-size-base;
             padding: $padding-btn-vertical $padding-round-horizontal;
             line-height: $line-height-general;
@@ -31,7 +31,7 @@
 
             &.active{
                 background-color: $light-black;
-                border-radius: 30px;
+                border-radius: 5px;
                 color: $white-color;
             }
 
